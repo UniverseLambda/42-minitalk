@@ -20,7 +20,7 @@ OBJS := src/ft_putchar_fd.o \
 		src/char_page_pages0.o \
 		src/char_page_pages1.o
 
-INCLUDES := inc/char_pages.h \
+INCLUDES := inc/char_page.h \
 			inc/utils.h
 
 all: $(NAME)

@@ -17,7 +17,7 @@ OBJS := src/main.o \
 
 all: $(NAME) $(LIB_COMMON)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(LIB_COMMON)
 	$(LD) $(LDFLAGS) -o $(NAME) $(OBJS) $(LIB_COMMON)
 
 %.o: %.c

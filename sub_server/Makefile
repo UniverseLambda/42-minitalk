@@ -17,12 +17,12 @@ OBJS := src/main.o \
 
 INCLUDES := inc/server.h
 
-all: $(NAME)
+all: $(NAME) $(LIB_COMMON)
 
-$(NAME): $(OBJS)  $(LIB_COMMON)
+$(NAME): $(OBJS) $(LIB_COMMON)
 	$(LD) $(LDFLAGS) -o $(NAME) $(OBJS) $(LIB_COMMON)
 
-%.o: %.c
+%.o: %.c $(INCLUDES)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
