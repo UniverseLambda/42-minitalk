@@ -1,26 +1,26 @@
 #include <char_page.h>
 
-char	*page1()
+char	*page1(void)
 {
-	return ("!\"#$%&'()*+,-./\0");
+	return (" !\"#$%&'()*+,-.\0");
 }
 
-char	*page2()
+char	*page2(void)
 {
-	return ("0123456789:;<=>\0");
+	return ("/0123456789:;<=\0");
 }
 
-char	*page3()
+char	*page3(void)
 {
-	return ("?@ABCDEFGHIJKLM\0");
+	return (">?@ABCDEFGHIJKL\0");
 }
 
-char	*page4()
+char	*page4(void)
 {
-	return ("NOPQRSTUVWXYZ[\\\0");
+	return ("MNOPQRSTUVWXYZ[\0");
 }
 
-char	*page5()
+char	*page5(void)
 {
-	return ("]^_`abcdefghijk\0");
+	return ("\\]^_`abcdefghij\0");
 }

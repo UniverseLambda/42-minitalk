@@ -93,7 +93,7 @@ int	main(int argc, char *argv[])
 		return (3);
 	if (!print_str(pid, message))
 	{
-		ft_putstr_fd("Error while communicating with the server\n", STDERR_FILENO);
+		ft_putstr_fd("Communication error\n", STDERR_FILENO);
 		return (4);
 	}
 	return (0);

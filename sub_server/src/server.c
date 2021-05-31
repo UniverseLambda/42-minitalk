@@ -6,14 +6,14 @@
 #include <utils.h>
 #include <char_page.h>
 
-static t_runtime	*rt_ptr()
+static t_runtime	*rt_ptr(void)
 {
 	static t_runtime	rt;
 
-	return &rt;
+	return (&rt);
 }
 
-static void server_flush()
+static void	server_flush(void)
 {
 	t_runtime	*rt;
 
@@ -24,7 +24,7 @@ static void server_flush()
 	rt->buffidx = 0;
 }
 
-static void admit_char(t_runtime	*rt)
+static void	admit_char(t_runtime *rt)
 {
 	char	c;
 
@@ -58,7 +58,7 @@ static void	sigreceiver(int sig)
 	t_runtime	*rt;
 	uint8_t		b;
 
-	rt  = rt_ptr();
+	rt = rt_ptr();
 	if (sig == SIGUSR1)
 		b = 0;
 	else
@@ -68,7 +68,7 @@ static void	sigreceiver(int sig)
 		admit_char(rt);
 }
 
-int setup_server()
+int	setup_server(void)
 {
 	void		*sigret;
 	t_runtime	*rt;

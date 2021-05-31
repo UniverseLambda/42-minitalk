@@ -3,8 +3,8 @@
 #ifndef SERVER_H
 # define SERVER_H
 
-#include <stdint.h>
-#include <stddef.h>
+# include <stdint.h>
+# include <stddef.h>
 
 typedef struct s_runtime
 {
@@ -18,6 +18,6 @@ typedef struct s_runtime
 	int		expect_page;
 }	t_runtime;
 
-int	setup_server();
+int	setup_server(void);
 
 #endif // SERVER_H

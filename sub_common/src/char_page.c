@@ -35,6 +35,6 @@ char	conv_char(char c, uint8_t *page)
 {
 	if (c < 0x20)
 		return ('\0');
-	*page = ((c - 0x20) / 16) + 1;
-	return ((c - 0x20) % 16);
+	*page = ((c - 0x20) / 15) + 1;
+	return ((c - 0x20) % 15);
 }

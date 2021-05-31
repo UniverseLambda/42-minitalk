@@ -9,12 +9,12 @@ char	get_char(uint8_t page, uint8_t charid);
 char	*get_char_page(uint8_t page);
 char	conv_char(char c, uint8_t *page);
 
-char	*page1();
-char	*page2();
-char	*page3();
-char	*page4();
-char	*page5();
-char	*page6();
-char	*page7();
+char	*page1(void);
+char	*page2(void);
+char	*page3(void);
+char	*page4(void);
+char	*page5(void);
+char	*page6(void);
+char	*page7(void);
 
 #endif // CHAR_PAGE_H

@@ -16,37 +16,21 @@ BUILD_TYPE := release
 
 OBJS := src/main.o
 
-all: all-dependency $(NAME)
+all: $(NAME) $(LIB_COMMON)
 
-$(NAME): dependency $(OBJS)
+$(NAME): $(OBJS)
 	$(LD) $(LDFLAGS) -o $(NAME) $(OBJS) $(LIB_COMMON)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-clean: clean-dependency
+clean:
 	$(RM) -f $(OBJS)
 
-fclean: fclean-dependency clean
+fclean: clean
 	$(RM) -f $(NAME)
 
 re: fclean all
 
 debug:	BUILD_TYPE := debug
 debug:	all
-
-# DEPENDENCIES TARGET
-
-dependency: all-dependency
-
-all-dependency:
-	@# make -C libft/ all
-
-clean-dependency:
-	@# make -C libft/ clean
-
-fclean-dependency:
-	@# make -C libft/ fclean
-
-re-dependency:
-	@# make -C libft/ re

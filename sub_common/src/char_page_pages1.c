@@ -1,11 +1,11 @@
 #include <char_page.h>
 
-char	*page6()
+char	*page6(void)
 {
-	return ("lmnopqrstuvwxyz\0");
+	return ("klmnopqrstuvwxy\0");
 }
 
-char	*page7()
+char	*page7(void)
 {
-	return ("{|}~           \0");
+	return ("z{|}~          \0");
 }
