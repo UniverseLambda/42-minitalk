@@ -4,6 +4,8 @@
 #include <utils.h>
 #include <char_page.h>
 
+int	validate_str(char *message);
+
 static void	usage(char *pgm_name)
 {
 	ft_putstr_fd("USAGE: ", STDOUT_FILENO);
@@ -90,10 +92,12 @@ int	main(int argc, char *argv[])
 	}
 	if (!parse_args(argv, &pid, &message))
 		return (3);
+	if (!validate_str(message))
+		return (4);
 	if (!print_str(pid, message))
 	{
 		ft_putstr_fd("Communication error\n", STDERR_FILENO);
-		return (4);
+		return (5);
 	}
 	return (0);
 }

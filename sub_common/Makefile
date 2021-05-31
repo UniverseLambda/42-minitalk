@@ -12,9 +12,6 @@ CFLAGS ?=
 CFLAGS := $(CFLAGS) -Wall -Wextra -Werror -Iinc -g3
 ARFLAGS := rcs
 
-
-BUILD_TYPE := release
-
 OBJS := src/ft_putchar_fd.o \
 		src/ft_putnbr_fd.o \
 		src/ft_putstr_fd.o \
@@ -41,6 +38,3 @@ fclean: clean
 	$(RM) -f $(NAME)
 
 re: fclean all
-
-debug:	BUILD_TYPE := debug
-debug:	all

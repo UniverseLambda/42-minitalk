@@ -1,5 +1,5 @@
 .DEFAULT: all
-.PHONY: all clean fclean re debug common client server
+.PHONY: all clean fclean re common client server
 .SUFFIXES: .c .o
 
 NAME_CLIENT := client
@@ -9,8 +9,6 @@ NAME_COMMON := libcommon.a
 CP ?= cp
 RM ?= rm
 MAKE ?= make
-
-BUILD_TYPE := release
 
 DIR_INC_COMMON := ../sub_common/inc
 LIB_COMMON := ../sub_common/$(NAME_COMMON)
@@ -47,6 +45,3 @@ re:
 	$(MAKE) -C sub_server/ re
 	$(RM) -rf $(NAME_CLIENT)
 	$(RM) -rf $(NAME_SERVER)
-
-debug:	BUILD_TYPE := debug
-debug:	all

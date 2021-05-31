@@ -12,9 +12,8 @@ CFLAGS ?=
 CFLAGS := $(CFLAGS) -Wall -Wextra -Werror -Iinc -I$(DIR_INC_COMMON) -g3
 LDFLAGS := $(LDFLAGS) -g3
 
-BUILD_TYPE := release
-
-OBJS := src/main.o
+OBJS := src/main.o \
+		src/validator.o
 
 all: $(NAME) $(LIB_COMMON)
 
@@ -31,6 +30,3 @@ fclean: clean
 	$(RM) -f $(NAME)
 
 re: fclean all
-
-debug:	BUILD_TYPE := debug
-debug:	all
