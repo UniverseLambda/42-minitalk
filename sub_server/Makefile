@@ -17,6 +17,8 @@ BUILD_TYPE := release
 OBJS := src/main.o \
 		src/server.o
 
+INCLUDES := inc/server.h
+
 all: $(NAME)
 
 $(NAME): $(OBJS)  $(LIB_COMMON)

@@ -4,7 +4,6 @@
 #include <utils.h>
 #include <char_page.h>
 
-#include <stdio.h>
 static void	usage(char *pgm_name)
 {
 	ft_putstr_fd("USAGE: ", STDOUT_FILENO);

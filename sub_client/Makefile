@@ -21,7 +21,7 @@ all: $(NAME) $(LIB_COMMON)
 $(NAME): $(OBJS)
 	$(LD) $(LDFLAGS) -o $(NAME) $(OBJS) $(LIB_COMMON)
 
-%.o: %.c libft.h
+%.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:

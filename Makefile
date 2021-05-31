@@ -33,7 +33,7 @@ clean:
 	$(MAKE) -C sub_client/ clean
 	$(MAKE) -C sub_server/ clean
 
-fclean: clean
+fclean:
 	$(MAKE) -C sub_common/ fclean
 	$(MAKE) -C sub_client fclean
 	$(MAKE) -C sub_server/ fclean
@@ -41,7 +41,12 @@ fclean: clean
 	$(RM) -rf $(NAME_SERVER)
 
 
-re: fclean all
+re:
+	$(MAKE) -C sub_common/ re
+	$(MAKE) -C sub_client re
+	$(MAKE) -C sub_server/ re
+	$(RM) -rf $(NAME_CLIENT)
+	$(RM) -rf $(NAME_SERVER)
 
 debug:	BUILD_TYPE := debug
 debug:	all

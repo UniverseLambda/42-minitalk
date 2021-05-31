@@ -12,6 +12,7 @@ CFLAGS ?=
 CFLAGS := $(CFLAGS) -Wall -Wextra -Werror -Iinc -g3
 ARFLAGS := rcs
 
+
 BUILD_TYPE := release
 
 OBJS := src/ft_putchar_fd.o \
@@ -22,10 +23,16 @@ OBJS := src/ft_putchar_fd.o \
 		src/char_page_pages0.o \
 		src/char_page_pages1.o
 
+INCLUDES := inc/char_pages.h \
+			inc/utils.h
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+
+%.o: %.c $(INCLUDES)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	$(RM) -f $(OBJS)
