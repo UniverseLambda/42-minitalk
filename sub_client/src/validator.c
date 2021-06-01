@@ -15,3 +15,16 @@ int	validate_str(char *message)
 	}
 	return (1);
 }
+
+int	validate_pid(char *pidstr)
+{
+	if (*pidstr == '+')
+		++pidstr;
+	while (*pidstr)
+	{
+		if (*pidstr > '9' || *pidstr < '0')
+			return (0);
+		++pidstr;
+	}
+	return (1);
+}

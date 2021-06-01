@@ -5,6 +5,7 @@
 #include <char_page.h>
 
 int	validate_str(char *message);
+int	validate_pid(char *pidstr);
 
 static void	usage(char *pgm_name)
 {
@@ -62,6 +63,11 @@ static int	parse_args(char *argv[], pid_t *pid, char **message)
 {
 	pid_t	tmp;
 
+	if (!validate_pid(argv[1]))
+	{
+		ft_putstr_fd("Invalid PID\n", STDERR_FILENO);
+		return (0);
+	}
 	tmp = ft_atoi(argv[1]);
 	if (tmp <= 1)
 	{
